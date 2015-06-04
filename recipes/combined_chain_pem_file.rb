@@ -18,7 +18,7 @@ node['ssl-vault']['certificates'].each do |cert_name, cert|
     node['ssl-vault']['data_bag_key_rex'],
     node['ssl-vault']['data_bag_key_replacement_str']
   )
-  vault_item = chef_vault_item('ssl-vault', clean_name)
+  vault_item = chef_vault_item("#{node['ssl-vault']['data_bag_name']}", clean_name)
 
   if vault_item.key?('chain_certificates') and vault_item['chain_certificates']
 

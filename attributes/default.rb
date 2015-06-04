@@ -8,8 +8,10 @@
 # Source:: https://github.com/onbeep-cookbooks/ssl-vault
 #
 
-
 default['ssl-vault']['certificates'] = []
+
+# If you already have a data bag named 'ssl-vault', change this.
+default['ssl-vault']['data_bag_name'] = 'ssl-vault'
 
 # These are currently Ubuntu-centric:
 default['ssl-vault']['certificate_directory'] = '/etc/ssl/certs'
